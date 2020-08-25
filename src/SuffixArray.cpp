@@ -103,7 +103,7 @@ private:
 		return 0;
 	}
 public:
-	int occ(T S){
+	P occ(T &S){
 		int okl=len(ST)+1,ngl=0;
 		while(okl-ngl>1){
 			int mid=(okl+ngl)/2;
@@ -116,8 +116,15 @@ public:
 			if(ismatch(S,SA[mid])<0)okr=mid;
 			else ngr=mid;
 		}
-		return okr-okl;
+		return P(okl,okr);
 	}
+    vector<int>locate(T &S){
+        vector<int>res;
+        P range=occ(S);
+        for(int i=range.first;i<range.second;i++)res.push_back(SA[i]);
+        sort(all(res));
+        return res;
+    }
 	SuffixArray(T &S):ST(S){
 		int mn=inf,mx=-inf;
 		for(auto i:S){
