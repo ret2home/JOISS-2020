@@ -92,7 +92,33 @@ class SuffixArray{
 	}
 public:
 	vector<int>SA;
-	SuffixArray(T &S){
+	T ST;
+private:
+	int ismatch(T &S,int index){
+		rep(i,len(S)){
+			if(i+index>=len(ST))return 1;
+			if(ST[i+index]<S[i])return 1;
+			if(ST[i+index]>S[i])return -1;
+		}
+		return 0;
+	}
+public:
+	int occ(T S){
+		int okl=len(ST)+1,ngl=0;
+		while(okl-ngl>1){
+			int mid=(okl+ngl)/2;
+			if(ismatch(S,SA[mid])<=0)okl=mid;
+			else ngl=mid;
+		}
+		int okr=len(ST)+1,ngr=0;
+		while(okr-ngr>1){
+			int mid=(okr+ngr)/2;
+			if(ismatch(S,SA[mid])<0)okr=mid;
+			else ngr=mid;
+		}
+		return okr-okl;
+	}
+	SuffixArray(T &S):ST(S){
 		int mn=inf,mx=-inf;
 		for(auto i:S){
 			chmin(mn,(int)i);chmax(mx,(int)i);
