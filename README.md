@@ -13,7 +13,7 @@ Induced Sorting と呼ばれるSuffix ArrayをO(N)で構築するアルゴリズ
 - [2段階ソート - Shogo Computing Laboratory](https://shogo82148.github.io/homepage/memo/algorithm/suffix-array/two-stage.html)
 - [SA-IS - Shogo Computing Laboratory](https://shogo82148.github.io/homepage/memo/algorithm/suffix-array/sa-is.html)
 
-[ソースコード](./SuffixArray.cpp)
+[ソースコード](./src/SuffixArray.cpp)
 
 [Verify](https://judge.yosupo.jp/submission/20027)
 
@@ -21,4 +21,4 @@ Induced Sorting と呼ばれるSuffix ArrayをO(N)で構築するアルゴリズ
 
 Suffix Arrayを用いたBWT変換を実装しました (8/25) 。
 
-[ソースコード](./BWT.cpp)
+[ソースコード](./src/BWT.cpp)
