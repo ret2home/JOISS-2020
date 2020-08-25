@@ -8,6 +8,8 @@ JOI 夏季セミナー 2020 (8/25 〜 8/28) の成果物です。
 
 Induced Sorting と呼ばれるSuffix ArrayをO(N)で構築するアルゴリズムを実装しました (8/25) 。
 
+全文検索機能である occ , locate も実装しました。
+
 (参考文献)
 
 - [2段階ソート - Shogo Computing Laboratory](https://shogo82148.github.io/homepage/memo/algorithm/suffix-array/two-stage.html)
@@ -15,10 +17,10 @@ Induced Sorting と呼ばれるSuffix ArrayをO(N)で構築するアルゴリズ
 
 [ソースコード](./src/SuffixArray.cpp)
 
-[Verify](https://judge.yosupo.jp/submission/20027)
+[Verify](https://onlinejudge.u-aizu.ac.jp/status/users/define_AC/submissions/1/ALDS1_14_B/judge/4792637/C++14)
 
 ## 2. Burrows Wheeler
 
-Suffix Arrayを用いたBWT変換を実装しました (8/25) 。
+Suffix Arrayを用いたBWT変換/復元を実装しました (8/25) 。
 
 [ソースコード](./src/BWT.cpp)
