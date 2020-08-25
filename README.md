@@ -1,14 +1,12 @@
 # JOISS-2020
 
-JOI 夏季セミナー 2020 の成果物です。
+JOI 夏季セミナー 2020 (8/25 〜 8/28) の成果物です。
 
 テキスト : 高速文字列解析の世界（著:岡野原大輔)
 
 ## 1. Suffix Array
 
-Induced Sorting と呼ばれるSuffix ArrayをO(N)で構築するアルゴリズムを実装しました。
-
-テキスト P30 〜 P34
+Induced Sorting と呼ばれるSuffix ArrayをO(N)で構築するアルゴリズムを実装しました (8/25) 。
 
 (参考文献)
 
@@ -18,3 +16,9 @@ Induced Sorting と呼ばれるSuffix ArrayをO(N)で構築するアルゴリズ
 [ソースコード](./SuffixArray.cpp)
 
 [Verify](https://judge.yosupo.jp/submission/20027)
+
+## 2. Burrows Wheeler
+
+Suffix Arrayを用いたBWT変換を実装しました (8/25) 。
+
+[ソースコード](./BWT.cpp)
