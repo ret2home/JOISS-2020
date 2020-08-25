@@ -118,13 +118,13 @@ public:
 		}
 		return P(okl,okr);
 	}
-    vector<int>locate(T &S){
-        vector<int>res;
-        P range=occ(S);
-        for(int i=range.first;i<range.second;i++)res.push_back(SA[i]);
-        sort(all(res));
-        return res;
-    }
+	vector<int>locate(T &S){
+		vector<int>res;
+		P range=occ(S);
+		for(int i=range.first;i<range.second;i++)res.push_back(SA[i]);
+		sort(all(res));
+		return res;
+	}
 	SuffixArray(T &S):ST(S){
 		int mn=inf,mx=-inf;
 		for(auto i:S){
