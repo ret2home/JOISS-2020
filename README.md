@@ -30,3 +30,9 @@ Suffix Arrayを用いたBWT変換/復元を実装しました (8/25) 。
 文字列解析に必要な rank のみ実装しました (8/26) 。
 
 [ソースコード](src/WaveletMatrix.cpp)
+
+## 4. FM-index
+
+FM-index を用いた高速な全文検索を実装しました (8/26) 。
+
+[ソースコード](src/FM_index.cpp)
