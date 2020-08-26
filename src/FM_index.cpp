@@ -24,7 +24,7 @@ class FMIndex{
     vector<int>locate(T &S){
         P range=occ(S);
         vector<int>res;
-        for(int i=range.first;i<range.second;i++)res.emplace_back(SA.SA[i]);
+        for(int i=range.first;i<range.second;i++)res.emplace_back(SA[i]);
         sort(all(res));
         return res;
     }

@@ -91,7 +91,6 @@ class SuffixArray{
 		sortTypeS(S,SA,type,alph);
 		return SA;
 	}
-public:
 	vector<int>SA;
 	T ST;
 private:
@@ -126,6 +125,7 @@ public:
 		sort(all(res));
 		return res;
 	}
+	int operator[](int k){return SA[k];}
 	SuffixArray(T S):ST(S){
 		int mn=inf,mx=-inf;
 		for(auto i:S){

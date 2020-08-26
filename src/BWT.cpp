@@ -6,7 +6,7 @@ T BWT(T S,SuffixArray<T>&SA){
     S+='$';
     T bwt;
     rep(i,len(S)){
-        bwt.push_back(S[(SA.SA[i]-1+len(S))%len(S)]);
+        bwt.push_back(S[(SA[i]-1+len(S))%len(S)]);
     }
     return bwt;
 }
