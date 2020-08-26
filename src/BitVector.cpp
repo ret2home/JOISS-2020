@@ -10,7 +10,7 @@ public:
         return (val?res:idx-res);
     }
     BitVector(vector<bool>&v){
-        int sz=(len(v)>>6)+2;
+        int sz=(len(v)>>6)+1;
         bit.assign(sz,0);
         sum.assign(sz,0);
         rep(i,len(v)){
