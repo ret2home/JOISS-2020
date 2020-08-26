@@ -24,3 +24,9 @@ Induced Sorting と呼ばれるSuffix ArrayをO(N)で構築するアルゴリズ
 Suffix Arrayを用いたBWT変換/復元を実装しました (8/25) 。
 
 [ソースコード](./src/BWT.cpp)
+
+## 3. Wavelet Matrix
+
+文字列解析に必要な rank のみ実装しました (8/26) 。
+
+[ソースコード](src/WaveletMatrix.cpp)
