@@ -45,25 +45,25 @@ class SuffixArray{
 			SA[--bucket[S[i]]]=i;
 			if(lastlms!=-1)nextlms[lastlms]=i;
 			lastlms=i;
-			ordered_lms.push_back(i);
+			ordered_lms.emplace_back(i);
 		}
 		nextlms[lastlms]=lastlms;
 		sortTypeL(S,SA,type,alph);
 		sortTypeS(S,SA,type,alph);
 		vector<int>lmses;
-		for(int i:SA)if(type[i]==LMS)lmses.push_back(i);
+		for(int i:SA)if(type[i]==LMS)lmses.emplace_back(i);
 		int nowrank=0;
 		vector<int>newS={0};
 		REP(i,len(lmses)){
 			int pre=lmses[i-1],now=lmses[i];
-			if(nextlms[pre]-pre!=nextlms[now]-now)newS.push_back(++nowrank);
+			if(nextlms[pre]-pre!=nextlms[now]-now)newS.emplace_back(++nowrank);
 			else {
 				bool flag=false;
 				rep(j,nextlms[pre]-pre+1){
 					if(S[pre+j]!=S[now+j]){flag=true;break;}
 				}
-				if(flag)newS.push_back(++nowrank);
-				else newS.push_back(nowrank);
+				if(flag)newS.emplace_back(++nowrank);
+				else newS.emplace_back(nowrank);
 			}
 		}
 		if(nowrank+1!=len(lmses)){
@@ -72,10 +72,10 @@ class SuffixArray{
 				V[lmses[i]]=newS[i];
 			}
 			vector<int>newnewS;
-			rep(i,len(S))if(V[i]!=-1)newnewS.push_back(V[i]);
+			rep(i,len(S))if(V[i]!=-1)newnewS.emplace_back(V[i]);
 			vector<int>SA_=InducedSorting(newnewS,nowrank+1);
 			vector<int>newlmses;
-			for(int i:SA_)newlmses.push_back(ordered_lms[i]);
+			for(int i:SA_)newlmses.emplace_back(ordered_lms[i]);
 			lmses=newlmses;
 		}else {
 			vector<int>newlmses(len(lmses));
@@ -122,7 +122,7 @@ public:
 	vector<int>locate(T &S){
 		vector<int>res;
 		P range=occ(S);
-		for(int i=range.first;i<range.second;i++)res.push_back(SA[i]);
+		for(int i=range.first;i<range.second;i++)res.emplace_back(SA[i]);
 		sort(all(res));
 		return res;
 	}
@@ -132,8 +132,8 @@ public:
 			chmin(mn,(int)i);chmax(mx,(int)i);
 		}
 		vector<int>newS;
-		for(auto i:S)newS.push_back(i-mn+1);
-		newS.push_back(0);
+		for(auto i:S)newS.emplace_back(i-mn+1);
+		newS.emplace_back(0);
 		SA=InducedSorting(newS,mx-mn+2);
 	}
 };

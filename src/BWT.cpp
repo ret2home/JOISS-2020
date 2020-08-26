@@ -2,8 +2,7 @@
 #pragma once
 
 template<class T>
-T BWT(T S){
-    SuffixArray<T>SA(S);
+T BWT(T S,SuffixArray<T>&SA){
     S+='$';
     T bwt;
     rep(i,len(S)){
