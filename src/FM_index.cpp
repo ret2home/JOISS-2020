@@ -22,15 +22,16 @@ class FMIndex{
         return P(sp,ep);
     }
     vector<int>locate(T &S){
-        P range=occ(S);
-        vector<int>res;
-        for(int i=range.first;i<range.second;i++)res.emplace_back(SA[i]);
-        sort(all(res));
-        return res;
+        vector<bool>v(len(ST)+1);
+		P range=occ(S);
+		for(int i=range.first;i<range.second;i++)v[SA[i]]=true;
+		vector<int>res;
+		rep(i,len(ST)+1)if(v[i])res.emplace_back(i);
+		return res;
     }
-    FMIndex(T S):N(len(S)+1),ST(S+'$'),WM(S),SA(S){
+    FMIndex(T S):N(len(S)+1),ST(S+'$'),WM("",0),SA(S){
         bwt=BWT(S,SA);
-        WM=WaveletMatrix<T,C>(bwt);
+        WM=WaveletMatrix<T,C>(bwt,8);
         int mn=inf,mx=-inf;
         for(C i:ST){
             chmin(mn,(int)i);

@@ -6,7 +6,7 @@ JOI 夏季セミナー 2020 (8/25 〜 8/28) の成果物です。
 
 ## 1. Suffix Array
 
-Induced Sorting と呼ばれるSuffix ArrayをO(N)で構築するアルゴリズムを実装しました (8/25) 。
+Induced Sorting と呼ばれるSuffix ArrayをO(N)で構築するアルゴリズムを実装しました 。
 
 全文検索機能である occ , locate も実装しました。
 
@@ -19,24 +19,30 @@ Induced Sorting と呼ばれるSuffix ArrayをO(N)で構築するアルゴリズ
 
 ## 2. Burrows Wheeler
 
-Suffix Arrayを用いたBWT変換/復元を実装しました (8/25) 。
+Suffix Arrayを用いたBWT変換/復元を実装しました。
 
 [ソースコード](./src/BWT.cpp)
 
+## 3. Bit Vector
+
+Wavelet Matrixに使うためのBit Vectorを実装しました。
+
+[ソースコード](./src/BitVector.cpp)
+
 ## 3. Wavelet Matrix
 
-rank と quantile を実装しました (8/26) 。
+rank と quantile を実装しました 。
 
 [ソースコード](src/WaveletMatrix.cpp)
 
 ## 4. FM-index
 
-FM-index を用いた高速な全文検索を実装しました (8/26) 。メモリ圧縮はまだしていません。
+FM-index を用いた高速な全文検索を実装しました。メモリ圧縮はまだしていません。
 
 [ソースコード](src/FM_index.cpp)
 
 ## Verify
 
-Suffix Array , BWT , Wavelet Matrix::rank , FM-index : https://onlinejudge.u-aizu.ac.jp/status/users/define_AC/submissions/1/ALDS1_14_B/judge/4794900/C++14
+Suffix Array , BWT , Bit Vector , Wavelet Matrix::rank , FM-index : https://onlinejudge.u-aizu.ac.jp/status/users/define_AC/submissions/1/ALDS1_14_B/judge/4797440/C++14
 
-Wavelet Matrix::quantile : https://judge.yosupo.jp/submission/20159
+Wavelet Matrix::quantile : https://judge.yosupo.jp/submission/20203

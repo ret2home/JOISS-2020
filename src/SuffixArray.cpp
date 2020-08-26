@@ -119,10 +119,11 @@ public:
 		return P(okl,okr);
 	}
 	vector<int>locate(T &S){
-		vector<int>res;
+		vector<bool>v(len(ST)+1);
 		P range=occ(S);
-		for(int i=range.first;i<range.second;i++)res.emplace_back(SA[i]);
-		sort(all(res));
+		for(int i=range.first;i<range.second;i++)v[SA[i]]=true;
+		vector<int>res;
+		rep(i,len(ST)+1)if(v[i])res.emplace_back(i);
 		return res;
 	}
 	int operator[](int k){return SA[k];}

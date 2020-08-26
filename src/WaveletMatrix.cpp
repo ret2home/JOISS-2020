@@ -1,47 +1,51 @@
 #include "template.cpp"
+#include "BitVector.cpp"
 #pragma once
 
 template<class T,class C>
 class WaveletMatrix{
-    int N;
-    vector<int>index[30];
-    map<C,int>st;
+    int N,bitlen;
+    vector<BitVector>index;
+    vector<int>st;
 public:
     T body;
     int rank(C c,int idx){
-        if(st.find(c)==st.end())return 0;
-        rev(i,30){
-            if(c>>i&1)idx=index[i][idx]+(N-index[i][N]);
-            else idx-=index[i][idx];
+        if(st[c]==-1)return 0;
+        rev(i,bitlen){
+            if(c>>i&1)idx=index[i].rank(1,idx)+index[i].rank(0,N);
+            else idx-=index[i].rank(1,idx);
         }
         return max(0,idx-st[c]);
     }
     int quantile(int l,int r,int c){
         int res=0;
-        rev(i,30){
-            int cnt=(r-l)-(index[i][r]-index[i][l]);
+        rev(i,bitlen){
+            int cnt=(r-l)-(index[i].rank(1,r)-index[i].rank(1,l));
             if(cnt<=c){
                 c-=cnt;
-                l=(N-index[i][N])+index[i][l];
-                r=(N-index[i][N])+index[i][r];
+                l=index[i].rank(0,N)+index[i].rank(1,l);
+                r=index[i].rank(0,N)+index[i].rank(1,r);
                 res+=1<<i;
             }else {
-                l-=index[i][l];
-                r-=index[i][r];
+                l-=index[i].rank(1,l);
+                r-=index[i].rank(1,r);
             }
         }
         return res;
     }
-    WaveletMatrix(T V):N(len(V)),body(V){
-        rev(i,30){
+    WaveletMatrix(T V,int bitlen):N(len(V)),bitlen(bitlen),body(V){
+        vector<bool>bit(N);
+        index.resize(bitlen,bit);
+        rev(i,bitlen){
             T newV[2];
-            index[i].push_back(0);
             rep(j,N){
-                index[i].push_back((V[j]>>i&1)+index[i].back());
+                bit[j]=(V[j]>>i&1);
                 newV[V[j]>>i&1].push_back(V[j]);
             }
             V=newV[0];V.insert(V.end(),all(newV[1]));
+            index[i]=BitVector(bit);
         }
-        rep(i,N)if(st.find(V[i])==st.end())st[V[i]]=i;
+        st.assign(256,-1);
+        rep(i,N)if(st[V[i]]==-1)st[V[i]]=i;
     }
 };
