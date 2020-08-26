@@ -27,7 +27,7 @@ Suffix Arrayを用いたBWT変換/復元を実装しました (8/25) 。
 
 ## 3. Wavelet Matrix
 
-文字列解析に必要な rank のみ実装しました (8/26) 。
+rank と quantile を実装しました (8/26) 。
 
 [ソースコード](src/WaveletMatrix.cpp)
 
