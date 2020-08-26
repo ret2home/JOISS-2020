@@ -1,4 +1,5 @@
 #include "./SuffixArray.cpp"
+#pragma once
 
 template<class T>
 T BWT(T S){

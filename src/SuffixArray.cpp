@@ -1,4 +1,5 @@
 #include "./template.cpp"
+#pragma once
 
 template<class T>
 class SuffixArray{
@@ -125,7 +126,7 @@ public:
 		sort(all(res));
 		return res;
 	}
-	SuffixArray(T &S):ST(S){
+	SuffixArray(T S):ST(S){
 		int mn=inf,mx=-inf;
 		for(auto i:S){
 			chmin(mn,(int)i);chmax(mx,(int)i);

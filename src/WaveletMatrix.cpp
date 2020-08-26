@@ -1,23 +1,24 @@
 #include "template.cpp"
+#pragma once
 
-template<class T>
+template<class T,class C>
 class WaveletMatrix{
     int N;
-    vector<T>index[40];
-    map<T,T>st;
+    vector<int>index[40];
+    map<C,int>st;
 public:
-    vector<T>body;
-    int rank(T c,int idx){
+    T body;
+    int rank(C c,int idx){
         if(st.find(c)==st.end())return 0;
         rev(i,40){
-            if(c>>i&1)idx=index[i][idx+1]+(N-index[i][N])-1;
-            else idx-=index[i][idx+1];
+            if(c>>i&1)idx=index[i][idx]+(N-index[i][N]);
+            else idx-=index[i][idx];
         }
-        return max(0ll,idx-st[c]+1);
+        return max(0,idx-st[c]);
     }
-    WaveletMatrix(vector<T>&V):N(len(V)),body(V){
+    WaveletMatrix(T V):N(len(V)),body(V){
         rev(i,40){
-            vector<T>newV[2];
+            T newV[2];
             index[i].push_back(0);
             rep(j,N){
                 index[i].push_back((V[j]>>i&1)+index[i].back());
