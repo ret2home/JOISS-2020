@@ -17,8 +17,6 @@ Induced Sorting と呼ばれるSuffix ArrayをO(N)で構築するアルゴリズ
 
 [ソースコード](./src/SuffixArray.cpp)
 
-[Verify](https://onlinejudge.u-aizu.ac.jp/status/users/define_AC/submissions/1/ALDS1_14_B/judge/4792637/C++14)
-
 ## 2. Burrows Wheeler
 
 Suffix Arrayを用いたBWT変換/復元を実装しました (8/25) 。
@@ -33,6 +31,12 @@ rank と quantile を実装しました (8/26) 。
 
 ## 4. FM-index
 
-FM-index を用いた高速な全文検索を実装しました (8/26) 。
+FM-index を用いた高速な全文検索を実装しました (8/26) 。メモリ圧縮はまだしていません。
 
 [ソースコード](src/FM_index.cpp)
+
+## Verify
+
+Suffix Array , BWT , Wavelet Matrix::rank , FM-index : https://onlinejudge.u-aizu.ac.jp/status/users/define_AC/submissions/1/ALDS1_14_B/judge/4794900/C++14
+
+Wavelet Matrix::quantile : https://judge.yosupo.jp/submission/20159
