@@ -80,11 +80,7 @@ class SuffixArray{
 			vector<int>newlmses;
 			for(int i:SA_)newlmses.emplace_back(ordered_lms[i]);
 			lmses=newlmses;
-		}else {
-			vector<int>newlmses(len(lmses));
-			rep(i,len(lmses))newlmses[newS[i]]=lmses[i];
-			lmses=newlmses;
-		}
+		}/
 		SA.assign(len(S),-1);
 		bucket=getBucket(S,alph);
 		rev(i,len(lmses)){
