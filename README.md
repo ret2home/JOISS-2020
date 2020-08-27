@@ -45,6 +45,6 @@ FM-index を用いた高速な全文検索を実装しました。メモリ圧�
 
 ## Verify
 
-Suffix Array , BWT , Bit Vector , Wavelet Matrix::rank , FM-index : https://onlinejudge.u-aizu.ac.jp/status/users/define_AC/submissions/1/ALDS1_14_B/judge/4797440/C++14
+Suffix Array , BWT , Bit Vector , Wavelet Matrix::rank , FM-index : https://onlinejudge.u-aizu.ac.jp/status/users/define_AC/submissions/1/ALDS1_14_D/judge/4798949/C++14
 
 Wavelet Matrix::quantile : https://judge.yosupo.jp/submission/20203
