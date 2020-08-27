@@ -9,7 +9,7 @@ class SuffixArray{
 	using TYPE=pair<bool,bool>;
 	vector<TYPE>assignType(vector<int>&S){
 		vector<TYPE>type(len(S));
-		type[len(S)-1]={0,0};
+		type[len(S)-1]=LMS;
 		for(int i=len(S)-2;i>=0;i--){
 			if(S[i]<S[i+1])type[i]=typeS;
 			else if(S[i]>S[i+1]){
