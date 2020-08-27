@@ -27,12 +27,15 @@ class SuffixArray{
 	}
 	void sortTypeL(vector<int>&S,vector<int>&SA,vector<TYPE>&type,int alph){
 		vector<int>bucket=getBucket(S,alph);
-		rep(i,len(S))if(SA[i]>0&&type[SA[i]-1]==typeL)SA[bucket[S[SA[i]-1]-1]++]=SA[i]-1;
+		for(int i:SA){
+			if(i>0&&type[i-1]==typeL)SA[bucket[S[i-1]-1]++]=i-1;
+		}
 	}
 	void sortTypeS(vector<int>&S,vector<int>&SA,vector<TYPE>&type,int alph){
 		vector<int>bucket=getBucket(S,alph);
-		rev(i,len(S))if(SA[i]>0&&type[SA[i]-1]==typeS||type[SA[i]-1]==LMS){
-			SA[--bucket[S[SA[i]-1]]]=SA[i]-1;
+		rev(j,len(S)){
+			int i=SA[j];
+			if(i>0&&(type[i-1]==typeS||type[i-1]==LMS))SA[--bucket[S[i-1]]]=i-1;
 		}
 	}
 	vector<int>InducedSorting(vector<int>&S,int alph){
