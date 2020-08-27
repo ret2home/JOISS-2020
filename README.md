@@ -29,7 +29,7 @@ Wavelet Matrixに使うためのBit Vectorを実装しました。
 
 [ソースコード](./src/BitVector.cpp)
 
-## 3. Wavelet Matrix
+## 4. Wavelet Matrix
 
 rank と quantile を実装しました 。
 
@@ -37,7 +37,7 @@ rank と quantile を実装しました 。
 
 ※今回は文字列解析なのでスタート地点を配列に保存していますが、数が大きい場合は連想配列に保存します。
 
-## 4. FM-index
+## 5. FM-index
 
 FM-index を用いた高速な全文検索を実装しました。メモリ圧縮はまだしていません。
 
