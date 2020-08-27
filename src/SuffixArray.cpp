@@ -77,9 +77,9 @@ class SuffixArray{
 			vector<int>newnewS;
 			rep(i,len(S))if(V[i]!=-1)newnewS.emplace_back(V[i]);
 			vector<int>SA_=InducedSorting(newnewS,nowrank+1);
-			vector<int>newlmses;
-			for(int i:SA_)newlmses.emplace_back(ordered_lms[i]);
-			lmses=newlmses;
+			rep(i,len(SA_)){
+				lmses[i]=ordered_lms[SA_[i]];
+			}
 		}
 		SA.assign(len(S),-1);
 		bucket=getBucket(S,alph);
